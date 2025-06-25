@@ -34,6 +34,13 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: echo "OPENAI_API_KEY=${OPENAI_API_KEY}" > .env
 
+      - name: 🧪 Print first line of app.js
+        run: |
+          echo ">>> First line of app.js"
+          head -n 1 app.js | cat -A
+          echo ">>> Full app.js"
+          cat -A app.js
+
       - name: 🤖 Generate JSDoc comments with AI
         run: node generate-jsdoc-comments.js .
 
