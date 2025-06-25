@@ -40,7 +40,7 @@ async function processPath(targetPath) {
       }
     }
   } else {
-    console.warn(` Skipping unsupported path: ${targetPath}`);
+    console.warn(`Skipping unsupported path: ${targetPath}`);
   }
 }
 
