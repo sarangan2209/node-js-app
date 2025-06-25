@@ -15,6 +15,12 @@ jobs:
       - name: ⬇️ Checkout code
         uses: actions/checkout@v4
 
+      - name: 🧪 Debug app.js
+        run: |
+          file app.js
+          head -n 1 app.js | cat -A
+          cat app.js
+
       - name: ⚙️ Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -34,8 +40,9 @@ jobs:
       - name: 🧾 Generate HTML docs
         run: npm run generate:jsdoc
 
-      - name: 📤 Upload docs as artifact
+      - name: 📤 Upload docs
         uses: actions/upload-artifact@v4
         with:
           name: jsdocs
           path: docs/
+
