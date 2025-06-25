@@ -7,7 +7,7 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 async function generateJsDoc(filePath) {
   if (!fs.existsSync(filePath)) {
-    console.error(`❌ File not found: ${filePath}`);
+    console.error(` File not found: ${filePath}`);
     return;
   }
 
@@ -22,7 +22,7 @@ async function generateJsDoc(filePath) {
 
   const updatedCode = response.choices[0].message.content;
   fs.writeFileSync(filePath, updatedCode, 'utf-8');
-  console.log(`✅ JSDoc added to: ${filePath}`);
+  console.log(` JSDoc added to: ${filePath}`);
 }
 
 async function processPath(targetPath) {

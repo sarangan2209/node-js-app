@@ -3,14 +3,9 @@ name: Generate AI JSDoc
 on:
   push:
     branches:
-      - main  # or replace with your default branch name
+      - main  # Change if your default branch is something else
     paths:
       - '**/*.js'
-  pull_request:
-    types: [opened, synchronize]
-    paths:
-      - '**/*.js'
-  workflow_dispatch:
 
 jobs:
   jsdoc:
