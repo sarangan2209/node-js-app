@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc app.js -d docs",
+    "generate:jsdoc": "jsdoc -c jsdoc.json",
+    "serve:jsdoc": "node serve-docs.js",
+    "ai:comment": "node generate-jsdoc-comments.js .",
+    "gen-docs": "npm run ai:comment && npm run generate:jsdoc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jsdoc": "^4.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-basic-auth": "^1.2.0",
+    "openai": "^5.7.0"
+  }
+}
