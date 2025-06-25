@@ -4,7 +4,7 @@
  * @returns {string} A greeting message.
  */
 function greet(name) {
-    return `Hello- ${name}!`;
+    return `Hello ${name}!`;
   }
   
   // Example usage

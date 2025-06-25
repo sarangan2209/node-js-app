@@ -1,13 +1,13 @@
 {
-  "plugins": [],
+  "plugins": ["jsdoc-babel"],
+  "babel": {
+    "extensions": ["js"],
+    "presets": ["@babel/preset-env"]
+  },
   "source": {
     "include": ["app.js"]
   },
   "opts": {
     "destination": "docs"
-  },
-  "babel": {
-    "extensions": ["js"],
-    "presets": ["@babel/preset-env"]
   }
 }
