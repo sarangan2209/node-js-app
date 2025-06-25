@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "jsdoc app.js -d docs",
-    "generate:jsdoc": "NODE_OPTIONS='--require @babel/register' jsdoc -c jsdoc.json",
+    "generate:jsdoc": "jsdoc -c jsdoc.json",
     "serve:jsdoc": "node serve-docs.js",
     "ai:comment": "node generate-jsdoc-comments.js .",
     "gen-docs": "npm run ai:comment && npm run generate:jsdoc"
@@ -16,9 +16,6 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@babel/core": "^7.27.4",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/register": "^7.27.1",
     "jsdoc": "^4.0.4"
   },
   "dependencies": {
