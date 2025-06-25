@@ -1,9 +1,13 @@
 {
-    "source": {
-      "include": ["app.js"]
-    },
-    "opts": {
-      "destination": "./docs/jsdocs"
-    }
+  "plugins": [],
+  "source": {
+    "include": ["app.js"]
+  },
+  "opts": {
+    "destination": "docs"
+  },
+  "babel": {
+    "extensions": ["js"],
+    "presets": ["@babel/preset-env"]
   }
-  
+}

@@ -16,6 +16,8 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
     "jsdoc": "^4.0.4"
   },
   "dependencies": {
