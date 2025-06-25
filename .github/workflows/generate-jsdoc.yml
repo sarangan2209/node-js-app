@@ -22,21 +22,17 @@ jobs:
 
       - name: 📦 Install dependencies
         run: npm ci
-        working-directory: ./node-js-app
 
       - name: 🔐 Load OpenAI API Key
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: echo "OPENAI_API_KEY=${OPENAI_API_KEY}" > .env
-        working-directory: ./node-js-app
 
       - name: 🤖 Generate JSDoc comments with AI
         run: node generate-jsdoc-comments.js .
-        working-directory: ./node-js-app
 
       - name: 🧾 Generate HTML docs
         run: npm run generate:jsdoc
-        working-directory: ./node-js-app
 
       - name: 📤 Upload docs as artifact
         uses: actions/upload-artifact@v4
