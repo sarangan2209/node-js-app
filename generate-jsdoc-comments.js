@@ -46,7 +46,7 @@ async function processPath(targetPath) {
 
 const inputPath = process.argv[2];
 if (!inputPath) {
-  console.error("❌ Please provide a file or directory");
+  console.error("Please provide a file or directory");
   process.exit(1);
 }
 
