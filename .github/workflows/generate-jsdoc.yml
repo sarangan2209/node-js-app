@@ -1,11 +1,16 @@
 name: Generate AI JSDoc
 
 on:
+  push:
+    branches:
+      - main  # or replace with your default branch name
+    paths:
+      - '**/*.js'
   pull_request:
     types: [opened, synchronize]
     paths:
       - '**/*.js'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   jsdoc:
@@ -15,29 +20,27 @@ jobs:
       - name: ⬇️ Checkout code
         uses: actions/checkout@v4
 
-      - name:  Set up Node.js
+      - name: ⚙️ Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name:  Install dependencies
+      - name: 📦 Install dependencies
         run: npm ci
 
-      - name:  Load OpenAI API Key
+      - name: 🔐 Load OpenAI API Key
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          echo "OPENAI_API_KEY=${OPENAI_API_KEY}" > .env
+        run: echo "OPENAI_API_KEY=${OPENAI_API_KEY}" > .env
 
-      - name:  Generate JSDoc comments with AI
+      - name: 🤖 Generate JSDoc comments with AI
         run: node generate-jsdoc-comments.js .
 
-      - name:  Generate HTML docs
+      - name: 🧾 Generate HTML docs
         run: npm run generate:jsdoc
 
-      - name:  Upload docs as artifact
+      - name: 📤 Upload docs as artifact
         uses: actions/upload-artifact@v4
         with:
           name: jsdocs
           path: docs/
-
